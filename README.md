@@ -12,3 +12,5 @@ To output coverage into a html `coverage html`
 The immediate command above creates a folder known as `htmlcov`. Inside this folder exists the file `index.html`
 
 You can then open the above html file using a browser of your choice e.g. `firefox htmlcov/index.html`
+
+![Python application](https://github.com/karianjahi/poblano_count_words_app/workflows/Python%20application/badge.svg)
