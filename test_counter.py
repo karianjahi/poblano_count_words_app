@@ -3,6 +3,7 @@ This is the module that tests the count_words script
 """
 
 # pylint: disable=R0201
+# pylint: disable=W0106
 import pytest
 from count_words import WordCounter
 
@@ -63,7 +64,7 @@ class TestWordCounter:
         text = "%$# My name %$@ is !$@$ Johannes @$@%"
         assert WordCounter(text).count_words() == 4
 
-    def test_multiple_whi_spaces(self):
+    def test_multiple_white_spaces(self):
         """
         Testing for multiple white spaces
         :return <None>
@@ -80,7 +81,4 @@ class TestWordCounter:
         text = ["This is a bootcamp college"]
         with pytest.raises(Exception) as error:
             WordCounter(text).count_words() == 5
-        assert "must be a string" in str(error.value)
-
-
-
+        assert "input must be a string" in str(error.value)

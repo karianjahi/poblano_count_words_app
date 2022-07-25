@@ -18,7 +18,7 @@ class WordCounter:
         :param text: <str>  text is a string
         :return <None>
         """
-        assert isinstance(text, str), "must be a string"
+        assert isinstance(text, str), "input must be a string"
         self.text = text
 
     def __repr__(self):
@@ -55,8 +55,8 @@ class WordCounter:
 
 
 if __name__ == "__main__":
-    TEXT = "I am studying data science"
+    TEXT = ["I am studying data science"]
     INST = WordCounter(TEXT)
-    # print(INST.count_words())
+    print(INST.count_words())
     #print(BeautifulSoup(TEXT, "html.parser").text)
 
