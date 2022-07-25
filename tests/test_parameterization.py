@@ -5,7 +5,7 @@ We use test parameterization to test all methods
 # pylint: disable=W0106
 # pylint: disable=E1121
 import pytest
-from count_words import WordCounter
+from poblano_count_words_app.count_words import CounterForWords
 
 MY_TESTS = [
     ("", 0),
@@ -26,7 +26,7 @@ def test_wrong_instance_type():
     """
     text = ["This is a bootcamp college"]
     with pytest.raises(Exception) as error:
-        WordCounter(text).count_words(text) == 5
+        CounterForWords(text).count_words(text) == 5
     assert "input must be a string" in str(error.value)
 
 
@@ -35,4 +35,4 @@ def test_all_tests(my_input, my_output):
     """
     Using test parameterization to test all
     """
-    assert WordCounter(my_input).count_words() == my_output
+    assert CounterForWords(my_input).count_words() == my_output

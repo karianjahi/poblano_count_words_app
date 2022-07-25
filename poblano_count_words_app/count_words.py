@@ -6,7 +6,7 @@ import re
 from bs4 import BeautifulSoup
 
 
-class WordCounter:
+class CounterForWords:
     """
     This is the class that contains the attributes
     and methods for word counting
@@ -56,7 +56,7 @@ class WordCounter:
 
 if __name__ == "__main__":
     TEXT = ["I am studying data science"]
-    INST = WordCounter(TEXT)
+    INST = CounterForWords(TEXT)
     print(INST.count_words())
     #print(BeautifulSoup(TEXT, "html.parser").text)
 

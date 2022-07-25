@@ -5,7 +5,7 @@ This is the module that tests the count_words script
 # pylint: disable=R0201
 # pylint: disable=W0106
 import pytest
-from count_words import WordCounter
+from poblano_count_words_app.count_words import CounterForWords
 
 
 class TestWordCounter:
@@ -21,7 +21,7 @@ class TestWordCounter:
         :return <None>
         """
         text = ""
-        assert WordCounter(text).count_words() == 0
+        assert CounterForWords(text).count_words() == 0
 
     def test_one_word(self):
         """
@@ -29,7 +29,7 @@ class TestWordCounter:
         :return <None>
         """
         text = "nlpoblano"
-        assert WordCounter(text).count_words() == 1
+        assert CounterForWords(text).count_words() == 1
 
     def test_multiple_words(self):
         """
@@ -37,7 +37,7 @@ class TestWordCounter:
         :return <None>
         """
         text = "I study at Spiced"
-        assert WordCounter(text).count_words() == 4
+        assert CounterForWords(text).count_words() == 4
 
     def test_text_enclosed_in_html(self):
         """
@@ -46,7 +46,7 @@ class TestWordCounter:
         :return <None>
         """
         text = "<p> We learnt html last week </p>"
-        assert WordCounter(text).count_words() == 5
+        assert CounterForWords(text).count_words() == 5
 
     def test_html_with_attributes(self):
         """
@@ -54,7 +54,7 @@ class TestWordCounter:
         :return <None>
         """
         text = "<div class='poblano'> <p> This section needs to be different </p> </div>"
-        assert WordCounter(text).count_words() == 6
+        assert CounterForWords(text).count_words() == 6
 
     def test_if_we_can_count_words_amidst_symbols(self):
         """
@@ -62,7 +62,7 @@ class TestWordCounter:
         :return None
         """
         text = "%$# My name %$@ is !$@$ Johannes @$@%"
-        assert WordCounter(text).count_words() == 4
+        assert CounterForWords(text).count_words() == 4
 
     def test_multiple_white_spaces(self):
         """
@@ -70,7 +70,7 @@ class TestWordCounter:
         :return <None>
         """
         text = "Testing for          multiple           white   spaces"
-        assert WordCounter(text).count_words() == 5
+        assert CounterForWords(text).count_words() == 5
 
     def test_wrong_instance_type(self):
         """
@@ -80,5 +80,5 @@ class TestWordCounter:
         """
         text = ["This is a bootcamp college"]
         with pytest.raises(Exception) as error:
-            WordCounter(text).count_words() == 5
+            CounterForWords(text).count_words() == 5
         assert "input must be a string" in str(error.value)
