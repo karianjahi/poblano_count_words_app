@@ -39,7 +39,7 @@ The aim of Continuous Integration (CI) is to make sure that github looks at our 
 - If there is any problem with our code, the github actions will fail and we should be able to see it.
 - **How do we do this?**
 	1. Create a folder in our main project called `.github`
-	2. Inside the `.github` folder, we create a yaml file with instructions on how to build the virtual machine, install all requirements and run our code.
+	2. Inside the `.github` folder, we create a workflow using a yaml file with instructions on how to build the virtual machine, install all requirements and run our code.
 		- If our code is okay, github gives us a green color.
 		- If not, it is a red!
 - In our case, we want to implement our continuous integration in a brand new branch.
